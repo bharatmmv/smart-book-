@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Note</title>
+    <meta name="description" content="A premium, glassmorphism-based smart notebook application.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <div class="logo-icon"><i class="ri-book-open-line"></i></div>
+                <h1>Smart Note</h1>
+            </div>
+            <nav class="nav-menu">
+                <a href="#" class="nav-item active"><i class="ri-sticky-note-line"></i> All Notes</a>
+                <a href="#" class="nav-item"><i class="ri-star-line"></i> Favorites</a>
+                <a href="#" class="nav-item"><i class="ri-folder-line"></i> Projects</a>
+                <a href="#" class="nav-item"><i class="ri-delete-bin-line"></i> Trash</a>
+            </nav>
+            <div class="storage-info">
+                <div class="storage-text">
+                    <span>Storage</span>
+                    <span>12 / 100 Notes</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 12%"></div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="top-bar">
+                <div class="search-bar">
+                    <i class="ri-search-line"></i>
+                    <input type="text" id="searchInput" placeholder="Search your notes...">
+                </div>
+                <div class="user-actions">
+                    <button class="icon-btn" aria-label="Notifications"><i class="ri-notification-3-line"></i></button>
+                    <button class="icon-btn" aria-label="Settings"><i class="ri-settings-4-line"></i></button>
+                    <div class="avatar">
+                        <img src="https://ui-avatars.com/api/?name=User&background=8b5cf6&color=fff" alt="User">
+                    </div>
+                </div>
+            </header>
+
+            <div class="content-header">
+                <h2>All Notes</h2>
+                <button class="btn-primary" id="newNoteBtn">
+                    <i class="ri-add-line"></i> New Note
+                </button>
+            </div>
+
+            <!-- Notes Grid -->
+            <div class="notes-grid" id="notesGrid">
+                <!-- Notes will be injected here by JS -->
+            </div>
+        </main>
+    </div>
+
+    <!-- Note Modal -->
+    <div class="modal-overlay" id="noteModal">
+        <div class="modal">
+            <div class="modal-header">
+                <input type="text" id="noteTitle" placeholder="Note Title..." class="title-input">
+                <button class="close-btn" id="closeModalBtn"><i class="ri-close-line"></i></button>
+            </div>
+            <div class="modal-body">
+                <textarea id="noteContent" placeholder="Start typing your smart note here..." class="content-input"></textarea>
+            </div>
+            <div class="modal-footer">
+                <div class="color-picker" id="colorPicker">
+                    <div class="color-option active" data-color="default" style="background: rgba(255, 255, 255, 0.05)"></div>
+                    <div class="color-option" data-color="blue" style="background: rgba(59, 130, 246, 0.2)"></div>
+                    <div class="color-option" data-color="purple" style="background: rgba(139, 92, 246, 0.2)"></div>
+                    <div class="color-option" data-color="pink" style="background: rgba(236, 72, 153, 0.2)"></div>
+                    <div class="color-option" data-color="green" style="background: rgba(16, 185, 129, 0.2)"></div>
+                    <div class="color-option" data-color="orange" style="background: rgba(249, 115, 22, 0.2)"></div>
+                </div>
+                <button class="btn-primary" id="saveNoteBtn">Save Note</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
